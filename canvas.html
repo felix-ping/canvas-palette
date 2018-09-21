@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <link rel="stylesheet" href="./canvas.css">
+    <script src="//at.alicdn.com/t/font_559463_7a7pl3v17mnrvn29.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="actions" id="actions">
+        <svg class="icon checked" aria-hidden="true" id="canvasThin">
+            <use xlink:href="#icon-pen"></use>
+        </svg>
+        <svg class="icon" aria-hidden="true" id="canvasThick">
+            <use xlink:href="#icon-pen1"></use>
+        </svg>
+        <svg class="icon" aria-hidden="true" id="canvasEraser">
+            <use xlink:href="#icon-eraser"></use>
+        </svg>
+        <svg class="icon" aria-hidden="true" id="canvasSave">
+            <use xlink:href="#icon-save"></use>
+        </svg>
+        <svg class="icon" aria-hidden="true" id="canvasDelete">
+            <use xlink:href="#icon-delete"></use>
+        </svg>
+    </div>
+    <div class="colors">
+        <ul>
+            <li class="color red" id="red"></li>
+            <li class="color blue" id="blue"></li>
+            <li class="color green " id="green"></li>
+            <li class="color yellow" id="yellow"></li>
+            <li class="color black active" id="black"></li>
+        </ul>
+    </div>
+    <script>console.log(222)</script>
+    <script src="./canvas.js"></script>
+</body>
+</html>
