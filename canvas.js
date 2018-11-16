@@ -50,6 +50,8 @@ function listenToMouse(canvas) {
 function touchDevice() {
     //触屏设备
     canvas.ontouchstart = function (aaa) {
+        this.firstDot = context.getImageData(0, 0, canvas.width, canvas.height);
+        saveData(this.firstDot)
         var x = aaa.touches[0].clientX
         var y = aaa.touches[0].clientY
         using = true
@@ -62,6 +64,7 @@ function touchDevice() {
             }
             drawCircle(x, y, (lineWidth / 2))
         }
+        
     }
 
     canvas.ontouchmove = function (aaa) {
@@ -102,6 +105,8 @@ function unTouchDevice() {
             }
             drawCircle(x, y, (lineWidth / 2))
         }
+        this.firstDot = context.getImageData(0, 0, canvas.width, canvas.height);
+        saveData(this.firstDot)
     }
 
     canvas.onmousemove = function (aaa) {
@@ -203,23 +208,17 @@ for (let index = 0; index < colorList.length; index++) {
 
 
 
-// //布置的撤销功能
-// canvas.ontouchstart = function (e) {
-//     // 在这里储存绘图表面
-//     this.firstDot = ctx.getImageData(0, 0, canvas.width, canvas.height);
-//     saveData(this.firstDot);
+//布置的撤销功能
 
-// }
+let undo = document.getElementById("undo");
+let historyData = [];
 
-// let undo = document.getElementById("undo");
-// let historyDeta = [];
-
-// function saveData (data) {
-//     (historyDeta.length === 10) && (historyDeta.shift()); // 上限为储存10步，太多了怕挂掉
-//     historyDeta.push(data);
-// }
-// undo.onclick = function(){
-//     if(historyDeta.length < 1) return false;
-//     ctx.putImageData(historyDeta[historyDeta.length - 1], 0, 0);
-//     historyDeta.pop()
-// };
+function saveData (data) {
+    (historyData.length === 10) && (historyData.shift()); // 上限为储存10步，太多了怕挂掉
+    historyData.push(data);
+}
+undo.addEventListener('click',function(){
+    if(historyData.length < 1) return false;
+    context.putImageData(historyData[historyData.length - 1], 0, 0);
+    historyData.pop()
+}, false)

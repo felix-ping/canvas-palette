@@ -7,16 +7,22 @@
     <title>canvas</title>
     <link rel="stylesheet" href="./canvas.css">
     <script src="//at.alicdn.com/t/font_559463_7a7pl3v17mnrvn29.js"></script>
+    <script src="//at.alicdn.com/t/font_922179_lzy1e6uxib.js"></script>
 </head>
 <body>
     <canvas id="canvas"></canvas>
     <div class="actions" id="actions">
         <div id="range-wrap"><input type="range" id="range" min="1" max="30" value="10" title="调整笔刷粗细"></div>
+        
         <svg class="icon checked" aria-hidden="true" id="canvasThick">
             <use xlink:href="#icon-pen1"></use>
         </svg>
         <svg class="icon" aria-hidden="true" id="canvasEraser">
             <use xlink:href="#icon-eraser"></use>
+        </svg>
+        
+        <svg class="icon" aria-hidden="true" id="undo">
+            <use xlink:href="#icon-daohangchexiao"></use>
         </svg>
         <svg class="icon" aria-hidden="true" id="canvasSave">
             <use xlink:href="#icon-save"></use>
