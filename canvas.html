@@ -11,11 +11,8 @@
 <body>
     <canvas id="canvas"></canvas>
     <div class="actions" id="actions">
-        <div id="range-wrap"><input type="range" id="range" min="1" max="30" value="5" title="调整笔刷粗细"></div>
-        <svg class="icon checked" aria-hidden="true" id="canvasThin">
-            <use xlink:href="#icon-pen"></use>
-        </svg>
-        <svg class="icon" aria-hidden="true" id="canvasThick">
+        <div id="range-wrap"><input type="range" id="range" min="1" max="30" value="10" title="调整笔刷粗细"></div>
+        <svg class="icon checked" aria-hidden="true" id="canvasThick">
             <use xlink:href="#icon-pen1"></use>
         </svg>
         <svg class="icon" aria-hidden="true" id="canvasEraser">
@@ -29,7 +26,7 @@
         </svg>
     </div>
     <div class="colors">
-        <ul>
+        <ul class="colorWrapper">
             <li class="color red" id="red"></li>
             <li class="color blue" id="blue"></li>
             <li class="color green " id="green"></li>
@@ -37,7 +34,6 @@
             <li class="color black active" id="black"></li>
         </ul>
     </div>
-    <script>console.log(222)</script>
     <script src="./canvas.js"></script>
 </body>
 </html>
