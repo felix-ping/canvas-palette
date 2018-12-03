@@ -40,9 +40,12 @@ function listenToMouse(canvas) {
         eraserEnabled = false
     }
     //特性检测
+    console.log('device',window.ontouchstart)
     if (document.body.ontouchstart !== undefined && document.body.ontouchstart !== null) {
         touchDevice()
+        console.log(2)
     } else {
+        console.log(1)
         unTouchDevice()
     }
 }
