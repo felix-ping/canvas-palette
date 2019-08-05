@@ -217,8 +217,9 @@ let undo = document.getElementById("undo");
 let historyData = [];
 
 function saveData (data) {
-    (historyData.length === 10) && (historyData.shift()); // 上限为储存10步，太多了怕挂掉
+    (historyData.length === 20) && (historyData.shift()); // 上限为储存10步，太多了怕挂掉
     historyData.push(data);
+  console.log(historyData);
 }
 undo.addEventListener('click',function(){
     if(historyData.length < 1) return false;

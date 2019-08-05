@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
 }
 #canvas {
     background-color: #ffffff;
@@ -9,6 +10,8 @@
     position: fixed;
     top: 0;
     left: 0;
+    outline: none;
+    user-select: none;
 }
 .icon {
     width: 1.5em; 
